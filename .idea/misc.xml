@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/HRMS-master/Api-Gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/HRMS-master/lead-Service/pom.xml" />
+        <option value="$PROJECT_DIR$/HRMS-master/Plan-Service/pom.xml" />
+        <option value="$PROJECT_DIR$/HRMS-master/User-Service/pom.xml" />
+        <option value="$PROJECT_DIR$/HRMS-master/Client-Service/pom.xml" />
+        <option value="$PROJECT_DIR$/HRMS-master/Coupon-Service/pom.xml" />
+        <option value="$PROJECT_DIR$/HRMS-master/Notice-service/pom.xml" />
+        <option value="$PROJECT_DIR$/HRMS-master/EventManagement/pom.xml" />
+        <option value="$PROJECT_DIR$/HRMS-master/Expense-Service/pom.xml" />
+        <option value="$PROJECT_DIR$/HRMS-master/Holiday-Service/pom.xml" />
+        <option value="$PROJECT_DIR$/HRMS-master/Payroll-service/pom.xml" />
+        <option value="$PROJECT_DIR$/HRMS-master/Leave-Management/pom.xml" />
+        <option value="$PROJECT_DIR$/HRMS-master/Purchase-Service/pom.xml" />
+        <option value="$PROJECT_DIR$/HRMS-master/Service-Registry/pom.xml" />
+        <option value="$PROJECT_DIR$/HRMS-master/Authentication-Service/pom.xml" />
+        <option value="$PROJECT_DIR$/HRMS-master/RoleAndPermissionService/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

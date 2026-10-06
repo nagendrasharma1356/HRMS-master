@@ -1,0 +1,4 @@
+# Project exclude paths
+/HRMS-master/EventManagement/target/
+/HRMS-master/lead-Service/target/
+/HRMS-master/Notice-service/target/

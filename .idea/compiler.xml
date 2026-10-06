@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Api-Gateway" />
+        <module name="Service-Registry" />
+        <module name="Authentication-Service" />
+      </profile>
+      <profile name="Annotation profile for Permission-Service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+        </processorPath>
+        <module name="RoleAndPermissionService" />
+        <module name="Purchase-Service" />
+        <module name="Coupon-Service" />
+        <module name="Leave-Management" />
+        <module name="Payroll-service" />
+        <module name="lead" />
+        <module name="User-Service" />
+        <module name="EventManagement" />
+        <module name="Expense-Service" />
+        <module name="Holiday-Service" />
+        <module name="Plan-Service" />
+        <module name="notice" />
+        <module name="Client-Service" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Api-Gateway" options="-parameters" />
+      <module name="Authentication-Service" options="-parameters" />
+      <module name="Client-Service" options="-parameters" />
+      <module name="Coupon-Service" options="-parameters" />
+      <module name="EventManagement" options="-parameters" />
+      <module name="Expense-Service" options="-parameters" />
+      <module name="Holiday-Service" options="-parameters" />
+      <module name="Leave-Management" options="-parameters" />
+      <module name="Payroll-service" options="-parameters" />
+      <module name="Plan-Service" options="-parameters" />
+      <module name="Purchase-Service" options="-parameters" />
+      <module name="RoleAndPermissionService" options="-parameters" />
+      <module name="Service-Registry" options="-parameters" />
+      <module name="User-Service" options="-parameters" />
+      <module name="lead" options="-parameters" />
+      <module name="notice" options="-parameters" />
+    </option>
+  </component>
+</project>

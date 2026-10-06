@@ -1,0 +1,118 @@
+server:
+  port: 9090
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        # Authentication Service
+        - id: authentication-service
+          uri: lb://authentication-service
+          predicates:
+            - Path=/auth/**
+          filters:
+            - RewritePath=/auth/(?<segment>.*), /auth/${segment}
+
+        # Expense Service
+        - id: expense-service
+          uri: lb://expense-service
+          predicates:
+            - Path=/api/category/**, /api/expenses/**, /api/expense/routes/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /api/${segment}
+
+        # Holiday Service
+        - id: holiday-service
+          uri: lb://holiday-service
+          predicates:
+            - Path=/api/holidays/**, /api/holidays/routes/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /api/${segment}
+
+        # Leave Service
+        - id: leave-service
+          uri: lb://leave-service
+          predicates:
+            - Path=/api/leaves/**, /api/reports/leaves/**, /api/leaves/routes/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /api/${segment}
+
+        # Payroll Service
+        - id: payroll-service
+          uri: lb://payroll-service
+          predicates:
+            - Path=/api/assignedPayrolls/**, /api/payrolls/**, /api/payrolls/routes/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /api/${segment}
+
+        # Role and Permission Service
+        - id: role-and-permission-service
+          uri: lb://role-and-permission-service
+          predicates:
+            - Path=/api/permission/**, /api/public/**, /api/role/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /api/${segment}
+
+        # User Service
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/api/admin/**, /api/common/**, /api/employee/**, /api/hr/**, /api/manager/**, /api/routes/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /api/${segment}
+
+        # Event Service
+        - id: event-service
+          uri: lb://event-service
+          predicates:
+            - Path=/api/event/routes/**, /api/events/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /api/${segment}
+
+        # Lead Service
+        - id: lead-service
+          uri: lb://lead-service
+          predicates:
+            - Path=/api/companies/**, /api/deals/**, /api/leads/**, /api/leads/routes/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /api/${segment}
+
+        # Notice Service
+        - id: notice-service
+          uri: lb://notice-service
+          predicates:
+            - Path=/api/client/**, /api/employee/notice/**, /api/notice/routes/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /api/${segment}
+
+        # Client Service
+        - id: client-service
+          uri: lb://client-service
+          predicates:
+            - Path=/api/clients/**, /api/notices/routes/**, /api/companies/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /api/${segment}
+
+        # Coupon Service
+        - id: coupon-service
+          uri: lb://coupon-service
+          predicates:
+            - Path=/api/coupons/**, /api/coupon/routes/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /api/${segment}
+
+        # Plan Service
+        - id: plan-service
+          uri: lb://plan-service
+          predicates:
+            - Path=/api/companyServices/**, /api/plan/routes/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /api/${segment}
+
+        # Purchase Service
+        - id: purchase-service
+          uri: lb://purchase-service
+          predicates:
+            - Path=/api/planPurchase/**, /api/purchase/routes/**, /api/invoice/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /api/${segment}

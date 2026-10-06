@@ -1,0 +1,118 @@
+server:
+  port: 9090
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        # Authentication Service
+        - id: authentication-service
+          uri: http://194.163.183.69:8082
+          predicates:
+            - Path=/auth/**
+          filters:
+            - RewritePath=/auth/(?<segment>.*), /auth/${segment}
+
+        # Expense Service
+        - id: expense-service
+          uri: http://194.163.183.69:8084
+          predicates:
+            - Path=/api/category/**, /api/expenses/**, /api/expense/routes/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /api/${segment}
+
+        # Holiday Service
+        - id: holiday-service
+          uri: http://194.163.183.69:8086
+          predicates:
+            - Path=/api/holidays/**, /api/holidays/routes/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /api/${segment}
+
+        # Leave Service
+        - id: leave-service
+          uri: http://194.163.183.69:8083
+          predicates:
+            - Path=/api/leaves/**, /api/reports/leaves/**, /api/leaves/routes/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /api/${segment}
+
+        # Payroll Service
+        - id: payroll-service
+          uri: http://194.163.183.69:8085
+          predicates:
+            - Path=/api/assignedPayrolls/**, /api/payrolls/**, /api/payrolls/routes/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /api/${segment}
+
+        # Role and Permission Service
+        - id: role-and-permission-service
+          uri: http://194.163.183.69:8080
+          predicates:
+            - Path=/api/permission/**, /api/public/**, /api/role/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /api/${segment}
+
+        # User Service
+        - id: user-service
+          uri: http://194.163.183.69:8081
+          predicates:
+            - Path=/api/admin/**, /api/common/**, /api/employee/**, /api/hr/**, /api/manager/**, /api/routes/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /api/${segment}
+
+        # Event Service
+        - id: event-service
+          uri: http://194.163.183.69:8088
+          predicates:
+            - Path=/api/event/routes/**, /api/events/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /api/${segment}
+
+        # Lead Service
+        - id: lead-service
+          uri: http://194.163.183.69:8089
+          predicates:
+            - Path=/api/companies/**, /api/deals/**, /api/leads/**, /api/leads/routes/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /api/${segment}
+
+        # Notice Service
+        - id: notice-service
+          uri: http://194.163.183.69:8092
+          predicates:
+            - Path=/api/client/**, /api/employee/notice/**, /api/notice/routes/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /api/${segment}
+
+        # Client Service
+        - id: client-service
+          uri: http://194.163.183.69:8093
+          predicates:
+            - Path=/api/clients/**, /api/notices/routes/**, /api/companies/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /api/${segment}
+
+        # Coupon Service
+        - id: coupon-service
+          uri: http://194.163.183.69:8094
+          predicates:
+            - Path=/api/coupons/**, /api/coupon/routes/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /api/${segment}
+
+        # Plan Service
+        - id: plan-service
+          uri: http://194.163.183.69:8095
+          predicates:
+            - Path=/api/companyServices/**, /api/plan/routes/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /api/${segment}
+
+        # Purchase Service
+        - id: purchase-service
+          uri: http://194.163.183.69:8096
+          predicates:
+            - Path=/api/planPurchase/**, /api/purchase/routes/**, /api/invoice/**
+          filters:
+            - RewritePath=/api/(?<segment>.*), /api/${segment}

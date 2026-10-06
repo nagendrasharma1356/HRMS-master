@@ -1,0 +1,136 @@
+name: 'harms'
+services:
+  api-gateway:
+    image: openjdk:17
+    container_name: api-gateway
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./Api-Gateway/target/Api-Gateway-0.0.1-SNAPSHOT.jar:/home/Api-Gateway-0.0.1-SNAPSHOT.jar
+    command: ["java", "-jar", "/home/Api-Gateway-0.0.1-SNAPSHOT.jar"]
+
+  authentication-service:
+    image: openjdk:17
+    container_name: authentication-service
+    ports:
+      - "8082:8082"
+    volumes:
+      - ./Authentication-Service/target/Authentication-Service-0.0.1-SNAPSHOT.jar:/home/Authentication-Service-0.0.1-SNAPSHOT.jar
+    command: ["java", "-jar", "/home/Authentication-Service-0.0.1-SNAPSHOT.jar"]
+
+  client-service:
+    image: openjdk:17
+    container_name: client-service
+    ports:
+      - "8093:8093"
+    volumes:
+      - ./Client-Service/target/Client-Service-0.0.1-SNAPSHOT.jar:/home/Client-Service-0.0.1-SNAPSHOT.jar
+    command: ["java", "-jar", "/home/Client-Service-0.0.1-SNAPSHOT.jar"]
+
+  coupon-service:
+    image: openjdk:17
+    container_name: coupon-service
+    ports:
+      - "8094:8094"
+    volumes:
+      - ./Coupon-Service/target/Coupon-Service-0.0.1-SNAPSHOT.jar:/home/Coupon-Service-0.0.1-SNAPSHOT.jar
+    command: ["java", "-jar", "/home/Coupon-Service-0.0.1-SNAPSHOT.jar"]
+
+  event-management:
+    image: openjdk:17
+    container_name: event-management
+    ports:
+      - "8088:8088"
+    volumes:
+      - ./Event-Management/target/Event-Management-0.0.1-SNAPSHOT.jar:/home/Event-Management-0.0.1-SNAPSHOT.jar
+    command: ["java", "-jar", "/home/Event-Management-0.0.1-SNAPSHOT.jar"]
+
+  expense-service:
+    image: openjdk:17
+    container_name: expense-service
+    ports:
+      - "8084:8084"
+    volumes:
+      - ./Expense-Service/target/Expense-Service-0.0.1-SNAPSHOT.jar:/home/Expense-Service-0.0.1-SNAPSHOT.jar
+    command: ["java", "-jar", "/home/Expense-Service-0.0.1-SNAPSHOT.jar"]
+
+  holiday-service:
+    image: openjdk:17
+    container_name: holiday-service
+    ports:
+      - "8086:8086"
+    volumes:
+      - ./Holiday-Service/target/Holiday-Service-0.0.1-SNAPSHOT.jar:/home/Holiday-Service-0.0.1-SNAPSHOT.jar
+    command: ["java", "-jar", "/home/Holiday-Service-0.0.1-SNAPSHOT.jar"]
+
+  lead-service:
+    image: openjdk:17
+    container_name: lead-service
+    ports:
+      - "8089:8089"
+    volumes:
+      - ./Lead-Service/target/Lead-Service-0.0.1-SNAPSHOT.jar:/home/Lead-Service-0.0.1-SNAPSHOT.jar
+    command: ["java", "-jar", "/home/Lead-Service-0.0.1-SNAPSHOT.jar"]
+
+  leave-management:
+    image: openjdk:17
+    container_name: leave-management
+    ports:
+      - "8083:8083"
+    volumes:
+      - ./Leave-Management/target/Leave-Management-0.0.1-SNAPSHOT.jar:/home/Leave-Management-0.0.1-SNAPSHOT.jar
+    command: ["java", "-jar", "/home/Leave-Management-0.0.1-SNAPSHOT.jar"]
+
+  notice-service:
+    image: openjdk:17
+    container_name: notice-service
+    ports:
+      - "8092:8092"
+    volumes:
+      - ./Notice-Service/target/Notice-Service-0.0.1-SNAPSHOT.jar:/home/Notice-Service-0.0.1-SNAPSHOT.jar
+    command: ["java", "-jar", "/home/Notice-Service-0.0.1-SNAPSHOT.jar"]
+
+  payroll-service:
+    image: openjdk:17
+    container_name: payroll-service
+    ports:
+      - "8085:8085"
+    volumes:
+      - ./Payroll-Service/target/Payroll-Service-0.0.1-SNAPSHOT.jar:/home/Payroll-Service-0.0.1-SNAPSHOT.jar
+    command: ["java", "-jar", "/home/Payroll-Service-0.0.1-SNAPSHOT.jar"]
+
+  plan-service:
+    image: openjdk:17
+    container_name: plan-service
+    ports:
+      - "8095:8095"
+    volumes:
+      - ./Plan-Service/target/Plan-Service-0.0.1-SNAPSHOT.jar:/home/Plan-Service-0.0.1-SNAPSHOT.jar
+    command: ["java", "-jar", "/home/Plan-Service-0.0.1-SNAPSHOT.jar"]
+
+  purchase-service:
+    image: openjdk:17
+    container_name: purchase-service
+    ports:
+      - "8096:8096"
+    volumes:
+      - ./Purchase-Service/target/Purchase-Service-0.0.1-SNAPSHOT.jar:/home/Purchase-Service-0.0.1-SNAPSHOT.jar
+    command: ["java", "-jar", "/home/Purchase-Service-0.0.1-SNAPSHOT.jar"]
+
+  role-permission-service:
+    image: openjdk:17
+    container_name: role-permission-service
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./Role-Permission-Service/target/Role-Permission-Service-0.0.1-SNAPSHOT.jar:/home/Role-Permission-Service-0.0.1-SNAPSHOT.jar
+    command: ["java", "-jar", "/home/Role-Permission-Service-0.0.1-SNAPSHOT.jar"]
+
+  user-service:
+    image: openjdk:17
+    container_name: user-service
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./User-Service/target/User-Service-0.0.1-SNAPSHOT.jar:/home/User-Service-0.0.1-SNAPSHOT.jar
+    command: ["java", "-jar", "/home/User-Service-0.0.1-SNAPSHOT.jar"]
